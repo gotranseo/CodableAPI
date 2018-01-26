@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'CodableAPI'
-  s.version          = '0.4.0'
+  s.version          = '0.5.0'
   s.summary          = 'A set of Swift helpers for interacting with APIs in a Codable format.'
   s.description      = <<-DESC
   Use Codable models to craft requests and receive responses from APIs. 
