@@ -6,6 +6,7 @@
 //  Copyright Slate Solutions, Inc.
 
 import Foundation
+import Alamofire
 
 public protocol APIRequestRepresentable {
     associatedtype ResponseType: Codable
@@ -17,7 +18,7 @@ public protocol APIRequestRepresentable {
     var method: HTTPRequestType { get set }
     
     func jsonDecoder() -> JSONDecoder
-    func request(parameters: Encodable?, successHandler: @escaping SuccessAPIResponse, errorHandler: @escaping ErrorAPIResponse)
+    func request(parameters: Parameters?, successHandler: @escaping SuccessAPIResponse, errorHandler: @escaping ErrorAPIResponse)
     func headers() -> Codable
     func url() -> String
 }
@@ -34,65 +35,71 @@ public extension APIRequestRepresentable {
         return JSONDecoder()
     }
     
-    func request(parameters: Encodable? = nil, successHandler: @escaping SuccessAPIResponse, errorHandler: @escaping ErrorAPIResponse) {
+    func request(parameters: Parameters? = nil, successHandler: @escaping SuccessAPIResponse, errorHandler: @escaping ErrorAPIResponse) {
         guard let url = URL(string: url()) else {
             errorHandler(nil)
             return
         }
         
-        var request = URLRequest(url: url)
-        request.httpMethod = method.rawValue
+        var requestHeaders: [String: String]!
         
         if var httpFields = headers().asDictionary() {
             if httpFields["Content-Type"] == nil {
                 httpFields["Content-Type"] = "application/json"
             }
             
-            request.allHTTPHeaderFields = httpFields
+            requestHeaders = httpFields
+        } else {
+            errorHandler(DescriptiveNetworkError("Could not turn headers object into a dictionary"))
         }
         
-        request.httpBody = try? JSONEncoder().encode(parameters)
-        
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            
-            guard let httpResponse = response as? HTTPURLResponse else {
-                errorHandler(DescriptiveNetworkError("Could not cast URLResponse to HTTPURLResponse"))
-                return
-            }
-            
-            let statusCode = httpResponse.statusCode
-            
-            guard let data = data else {
-                if 200...299 ~= statusCode {
-                    successHandler(nil)
-                } else {
-                    errorHandler(DescriptiveNetworkError("Could not extract data from response"))
+        Alamofire.request(
+            url,
+            method: method.alamofireType,
+            parameters: parameters?.asDictionary(),
+            encoding: JSONEncoding.default,
+            headers: requestHeaders).responseJSON { response in
+                //each response should have a status code and a json value
+                guard let statusCode = response.response?.statusCode else {
+                    errorHandler(DescriptiveNetworkError("Connection may be offline"))
+                    return
                 }
                 
-                return
-            }
-            
-            guard let jsonData = try? JSONSerialization.data(withJSONObject: data) else {
-                if 200...299 ~= statusCode {
-                    successHandler(nil)
-                } else {
-                    errorHandler(DescriptiveNetworkError("Could not cast data to JSON"))
+                guard let jsonValue = response.result.value else {
+                    //check if the status code is still 200...300, because sometimes responses will return only a status code
+                    if 200...299 ~= statusCode {
+                        successHandler(nil)
+                    } else {
+                        //return success=false because the status code was not in the acceptable range
+                        errorHandler(DescriptiveNetworkError("Could not get JSON value"))
+                    }
+                    
+                    return
                 }
                 
-                return
-            }
-            
-            if 200...299 ~= statusCode {
-                successHandler(try? self.jsonDecoder().decode(ResponseType.self, from: jsonData))
-            } else {
-                if let customCodableError = try? self.jsonDecoder().decode(ErrorType.self, from: jsonData) {
-                    errorHandler(customCodableError)
-                } else {
-                    errorHandler(DescriptiveNetworkError("Could not cast error to custom error type of \(type(of: ErrorType.self))"))
+                guard let data = try? JSONSerialization.data(withJSONObject: jsonValue) else {
+                    //check if the status code is still 200...300, because sometimes responses will return only a status code
+                    if 200...299 ~= statusCode {
+                        successHandler(nil)
+                    } else {
+                        //return success=false because the status code was not in the acceptable range
+                        errorHandler(DescriptiveNetworkError("Could not get parse data"))
+                    }
+                    
+                    return
                 }
-            }
+                
+                if 200...299 ~= statusCode {
+                    //success
+                    successHandler(try? self.jsonDecoder().decode(ResponseType.self, from: data))
+                } else {
+                    //error - we need a JSONDecoder here because `ErrorResponse` does not conform to APIModel
+                    if let errorTypeObject = try? JSONDecoder().decode(ErrorType.self, from: data) {
+                        errorHandler(errorTypeObject)
+                    } else {
+                        errorHandler(DescriptiveNetworkError("Could not turn the error response into specified error type"))
+                    }
+                }
         }
-        
-        task.resume()
     }
 }

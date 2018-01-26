@@ -1,5 +1,7 @@
 PODS:
-  - CodableAPI (0.1.0)
+  - Alamofire (4.6.0)
+  - CodableAPI (0.3.0):
+    - Alamofire
 
 DEPENDENCIES:
   - CodableAPI (from `../`)
@@ -9,7 +11,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  CodableAPI: 6756b1a56bf7e48278022b946782cb320e3a0da3
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  CodableAPI: 18bb2a216f5776535d33e907f3fdf89773a02198
 
 PODFILE CHECKSUM: 56113f23505614328995b23b2e8c652482043742
 

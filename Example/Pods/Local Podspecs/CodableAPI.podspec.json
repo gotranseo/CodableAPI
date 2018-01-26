@@ -1,22 +1,27 @@
 {
   "name": "CodableAPI",
-  "version": "0.1.0",
-  "summary": "A short description of CodableAPI.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/mcdappdev/CodableAPI",
+  "version": "0.3.0",
+  "summary": "A set of Swift helpers for interacting with APIs in a Codable format.",
+  "description": "Use Codable models to craft requests and receive responses from APIs.",
+  "homepage": "https://github.com/gotranseo/CodableAPI",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "mcdappdev": "mcdappdev@gmail.com"
+    "transeo": "jimmy@gotranseo.com"
   },
   "source": {
-    "git": "https://github.com/mcdappdev/CodableAPI.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/gotranseo/CodableAPI.git",
+    "tag": "0.3.0"
   },
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "CodableAPI/Classes/**/*"
+  "source_files": "CodableAPI/Classes/**/*",
+  "dependencies": {
+    "Alamofire": [
+
+    ]
+  }
 }

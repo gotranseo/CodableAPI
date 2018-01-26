@@ -6,10 +6,20 @@
 //  Copyright Slate Solutions, Inc.
 
 import Foundation
+import Alamofire
 
-public enum HTTPRequestType: String {
-    case get = "GET"
-    case post = "POST"
-    case delete = "DELETE"
-    case patch = "PATCH"
+public enum HTTPRequestType {
+    case get
+    case post
+    case delete
+    case patch
+    
+    var alamofireType: Alamofire.HTTPMethod {
+        switch self {
+        case .get: return .get
+        case .post: return .post
+        case .delete: return .delete
+        case .patch: return .patch
+        }
+    }
 }

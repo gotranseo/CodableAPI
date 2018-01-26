@@ -45,7 +45,7 @@ struct LoginRequest: APIRequestRepresentable {
 We also need to create a model to hold the login information:
 
 ```swift
-struct Login: Codable {
+struct Login: Parameters {
     var email: String
     var password: String
 }
@@ -59,7 +59,7 @@ let successHandler: ((User?) -> Void) = { user in
     //handle the success
 }
 
-let errorHandler: ((ErrorResponse?) -> Void) = { error in
+let errorHandler: ((Codable?) -> Void) = { error in
     //handle the error
 }
 
