@@ -34,7 +34,7 @@ public extension APIRequestRepresentable {
         return JSONDecoder()
     }
     
-    func request(parameters: Encodable?, successHandler: @escaping SuccessAPIResponse, errorHandler: @escaping ErrorAPIResponse) {
+    func request(parameters: Encodable? = nil, successHandler: @escaping SuccessAPIResponse, errorHandler: @escaping ErrorAPIResponse) {
         guard let url = URL(string: url()) else {
             errorHandler(nil)
             return
