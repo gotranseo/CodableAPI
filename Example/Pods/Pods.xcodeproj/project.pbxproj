@@ -12,6 +12,7 @@
 		1FA4A9B5AF382EF46F4F489E32F5D420 /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4558153272CDE514F8FD79A1BF041B85 /* Parameters.swift */; };
 		25419B3E7DC2F6B8C6064B7886FBD387 /* APIRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F486480A91E625CE0AD68EC6D13AFD17 /* APIRepresentable.swift */; };
 		3626B94094672CB1C9DEA32B9F9502E1 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C037B4034EDA3D7955BC5E4E9D9D6 /* TaskDelegate.swift */; };
+		395D7F58201B742F0052846B /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395D7F57201B742F0052846B /* APIError.swift */; };
 		41EB55CAAA63B23CFC2405EED26AF411 /* CodableAPI-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD044DD3BEA004533134E156B1E5F0E /* CodableAPI-dummy.m */; };
 		44B0507027916C69CED87DAD79B6E211 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 706C7AFFE37BA158C3553250F4B5FAED /* Alamofire.framework */; };
 		5387216E723A3C68E851CA15573CDD71 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E230A0448B394DE26E688DAC8E6201E /* Request.swift */; };
@@ -70,7 +71,7 @@
 /* Begin PBXFileReference section */
 		04F47F5C9CDB035C5AFADEBA5BF44F1C /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
 		09B1E45351B8C1071D138558C76F2E45 /* CodableAPI-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CodableAPI-umbrella.h"; sourceTree = "<group>"; };
-		0CC7DDAD22BBCCA23EE49ADD06D89BB7 /* CodableAPI.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = CodableAPI.modulemap; sourceTree = "<group>"; };
+		0CC7DDAD22BBCCA23EE49ADD06D89BB7 /* CodableAPI.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = CodableAPI.modulemap; sourceTree = "<group>"; };
 		0D0533E4EC2277AAAC8888328EC5A64B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		0FCBF1EED873F61C6D46CE37FA5C39D3 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
 		13915A4D76393BA5F09B1E87F71B1157 /* Pods-CodableAPI_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CodableAPI_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -80,12 +81,13 @@
 		1E230A0448B394DE26E688DAC8E6201E /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
 		20575BADCCA6485AEB2CCDCC34CCE75D /* Codable+Dictionary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Codable+Dictionary.swift"; path = "CodableAPI/Classes/Codable+Dictionary.swift"; sourceTree = "<group>"; };
 		22C1C119BCE81C53F76CAC2BE27C38E0 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
-		243268F5B92CAD9FB46ECB20E533764E /* Pods_CodableAPI_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CodableAPI_Tests.framework; path = "Pods-CodableAPI_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		243268F5B92CAD9FB46ECB20E533764E /* Pods_CodableAPI_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodableAPI_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FD044DD3BEA004533134E156B1E5F0E /* CodableAPI-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CodableAPI-dummy.m"; sourceTree = "<group>"; };
 		32B030D27CAC730C5EB0F22390645310 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
 		333025D8A3FFA2CBF8504B1CBB78998C /* Pods-CodableAPI_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CodableAPI_Tests-dummy.m"; sourceTree = "<group>"; };
+		395D7F57201B742F0052846B /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIError.swift; path = CodableAPI/Classes/APIError.swift; sourceTree = "<group>"; };
 		3D60BC9955B4F7FFA62D7440CB385C11 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
-		3F7A5716404646FDCD14ED5582ADCA1C /* Pods-CodableAPI_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-CodableAPI_Tests.modulemap"; sourceTree = "<group>"; };
+		3F7A5716404646FDCD14ED5582ADCA1C /* Pods-CodableAPI_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-CodableAPI_Tests.modulemap"; sourceTree = "<group>"; };
 		4235B9AA6D229997E897E626A50D774B /* Pods-CodableAPI_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CodableAPI_Tests-resources.sh"; sourceTree = "<group>"; };
 		4558153272CDE514F8FD79A1BF041B85 /* Parameters.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Parameters.swift; path = CodableAPI/Classes/Parameters.swift; sourceTree = "<group>"; };
 		46CDAC6C1187C5467E576980E1062C8B /* SessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Source/SessionManager.swift; sourceTree = "<group>"; };
@@ -98,11 +100,11 @@
 		6CFD25B8E874A05CCC2C3053AAC19E57 /* CodableAPI-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CodableAPI-prefix.pch"; sourceTree = "<group>"; };
 		6D960DFABA3CCFAA2C7DE7EC84C4453D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		706C7AFFE37BA158C3553250F4B5FAED /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D141D1953E5C6E67E362CE73090E48A /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Alamofire.modulemap; sourceTree = "<group>"; };
+		7D141D1953E5C6E67E362CE73090E48A /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		87882A1F5A92C8138D54545E51D51E6F /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		970FB95F1D4F51EAADED546AECB2DC09 /* DescriptiveNetworkError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DescriptiveNetworkError.swift; path = CodableAPI/Classes/DescriptiveNetworkError.swift; sourceTree = "<group>"; };
-		99FC0205D657277DA9CBE8B901FBEAD4 /* CodableAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CodableAPI.framework; path = CodableAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		99FC0205D657277DA9CBE8B901FBEAD4 /* CodableAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CodableAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D400B0B1EA058BC59C49DC634E7AE62 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A01C037B4034EDA3D7955BC5E4E9D9D6 /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
 		A672F68773AFCA23358F97FA623A92D8 /* Pods-CodableAPI_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CodableAPI_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -111,7 +113,7 @@
 		B029DBC43E49A740F12B5E4D2E6DD452 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
 		B44A27EFBB0DA84D738057B77F3413B1 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
 		BCCA9CA7D9C1A2047BB93336C5708DFD /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
-		BFCB98AEC70975506C1639163B7A21FD /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFCB98AEC70975506C1639163B7A21FD /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E0948BBD5DE177D78470186D98527D /* HTTPRequestType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPRequestType.swift; path = CodableAPI/Classes/HTTPRequestType.swift; sourceTree = "<group>"; };
 		DFCB8C44DE758E906C0BCDA455937B85 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
 		E2F9510473F6FFD7AA66524DB16C2263 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 		16FE75AC150FE21EDE716F1D7EBCE698 /* CodableAPI */ = {
 			isa = PBXGroup;
 			children = (
+				395D7F57201B742F0052846B /* APIError.swift */,
 				F486480A91E625CE0AD68EC6D13AFD17 /* APIRepresentable.swift */,
 				20575BADCCA6485AEB2CCDCC34CCE75D /* Codable+Dictionary.swift */,
 				970FB95F1D4F51EAADED546AECB2DC09 /* DescriptiveNetworkError.swift */,
@@ -197,7 +200,6 @@
 				B029DBC43E49A740F12B5E4D2E6DD452 /* Validation.swift */,
 				55F14F994FE7AB51F028BFE66CEF3106 /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -427,6 +429,7 @@
 				D726A49F24DAB5B4065084883E1E6925 /* GenericError.swift in Sources */,
 				D34822F60E470D1C30AAB8E5D60F90CE /* HTTPRequestType.swift in Sources */,
 				1FA4A9B5AF382EF46F4F489E32F5D420 /* Parameters.swift in Sources */,
+				395D7F58201B742F0052846B /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

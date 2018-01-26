@@ -10,7 +10,7 @@ import Alamofire
 
 public protocol APIRequestRepresentable {
     associatedtype ResponseType: Codable
-    associatedtype ErrorType: Codable
+    associatedtype ErrorType: APIError
     
     typealias SuccessAPIResponse = (_ object: ResponseType?) -> Void
     typealias ErrorAPIResponse = (_ errorObject: Codable?) -> Void
@@ -24,9 +24,6 @@ public protocol APIRequestRepresentable {
 }
 
 public extension APIRequestRepresentable {
-    
-    typealias ErrorType = GenericError
-    
     func headers() -> Codable {
         return EmptyHeaders()
     }
@@ -43,7 +40,7 @@ public extension APIRequestRepresentable {
         
         var requestHeaders: [String: String]!
         
-        if var httpFields = headers().asDictionary() {
+        if var httpFields = headers().asStringDictionary() {
             if httpFields["Content-Type"] == nil {
                 httpFields["Content-Type"] = "application/json"
             }

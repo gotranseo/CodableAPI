@@ -8,7 +8,7 @@
 import Foundation
 
 public final class DescriptiveNetworkError: Codable {
-    let failureReason: String
+    public let failureReason: String
     
     init(_ failureReason: String) {
         self.failureReason = failureReason

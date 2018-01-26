@@ -27,9 +27,7 @@ struct LoginRequest: APIRequestRepresentable {
     //specify a Codable type that you want the response parsed into 
     typealias ResponseType = User
 
-    //*optionally* specify an error type that you want any errors parsed into
-    //if this is not specified, `GenericError` will be returned for any errors.
-    //This may not work with your error responses - please set accordingly.
+    //specify an error type that conforms to `APIError` that you want any errors parsed into
     typealias ErrorType = MyErrorType
 
     //the request's method
