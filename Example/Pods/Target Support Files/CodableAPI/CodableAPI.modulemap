@@ -1,0 +1,6 @@
+framework module CodableAPI {
+  umbrella header "CodableAPI-umbrella.h"
+
+  export *
+  module * { export * }
+}

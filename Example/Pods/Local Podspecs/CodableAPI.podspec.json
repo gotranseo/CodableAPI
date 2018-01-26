@@ -1,0 +1,22 @@
+{
+  "name": "CodableAPI",
+  "version": "0.1.0",
+  "summary": "A short description of CodableAPI.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/mcdappdev/CodableAPI",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "mcdappdev": "mcdappdev@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/mcdappdev/CodableAPI.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "CodableAPI/Classes/**/*"
+}
